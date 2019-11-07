@@ -1,5 +1,4 @@
-# Hackathon_112019_Mivy
-Applitools Hackathon November 2019
+# Applitools Hackathon November 2019
 
 My first hackathon entry
 

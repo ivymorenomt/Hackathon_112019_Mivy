@@ -13,8 +13,9 @@ Test cases to automate:
 5. Dynamic Content Test
 
 Project Structure Explained: 
+
 Project
- > Resources - all locator classes and basepage class are in this directory
-  > PageObjects - pageobjects for every page/user actions
- > Data - test data to use all throughout the test
- > Tests - traditional functional tests using selenium is used.
+* Resources - all locator classes and basepage class are in this directory
+  - PageObjects - pageobjects for every page/user actions
+* Data - test data to use all throughout the test
+* Tests - traditional functional tests using selenium is used.

@@ -1,7 +1,7 @@
 class TestData() :
 
 	CHROME_EXECUTABLE_PATH = "/usr/local/bin/chromedriver"
-	BASE_URL = "https://demo.applitools.com/hackathon.html"
+	BASE_URL = "https://demo.applitools.com/hackathonV2.html"
 	FLASH_SALE_URL = "https://demo.applitools.com/hackathonAppV2.html?showAd=true"
 
 # Login Form Data

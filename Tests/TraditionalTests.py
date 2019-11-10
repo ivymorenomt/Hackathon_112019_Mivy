@@ -7,7 +7,6 @@ from Resources.PageObjects.FinancialOverview import FinancialOverview
 from Resources.PageObjects.FlashSale import FlashSale
 from Resources.PageObjects.CanvasChart import CanvasChartPage
 from Data.Testdata import TestData
-from Resources.Pages import HomePage
 
 class Test_LoginPage_UI_Elements_Base(unittest.TestCase):
 
@@ -53,33 +52,32 @@ class Test_02_Data_Driven(Test_LoginPage_UI_Elements_Base):
 		self.driver.back()
 		self.login.verify_user_is_remembered()
 
-class Test_03_Financial_Overview(Test_LoginPage_UI_Elements_Base):
+class Test_03_Table_Sort(Test_LoginPage_UI_Elements_Base):
 	def setUp(self):
 		super().setUp()
 
-	def test_031_check(self):
+	def test_031_sort_and_validate_values(self):
 		self.homePage = HomePage(self.driver)
 		self.login = UserLogin(self.driver)
 		self.login.login_username_password()
 		self.financial = FinancialOverview(self.driver)
 		self.financial.sort_table_values_and_match_values()
 
-class Test_04_Chart(Test_LoginPage_UI_Elements_Base):
+class Test_04_Canvas_Chart(Test_LoginPage_UI_Elements_Base):
 	def setUp(self):
 		super().setUp()
 
-	def test_041_check(self):
+	def test_041_canvas_chart_test(self):
 		self.homepage = HomePage(self.driver)
 		self.login = UserLogin(self.driver)
 		self.login.login_username_password()
 		self.chart = CanvasChartPage(self.driver)
 		self.chart.values_validate()
 
-class Test_05_FlashSale(Test_LoginPage_UI_Elements_Base):
+class Test_05_Dynamic_Content(Test_LoginPage_UI_Elements_Base):
 	def setUp(self):
 		super().setUp()
 
 	def test_051_validate(self):
-
 		self.sale = FlashSale(self.driver)
 		self.sale.load_page()

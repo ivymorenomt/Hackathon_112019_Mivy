@@ -30,7 +30,7 @@ class Locators():
     AMOUNT = (By.ID, 'amount')
 
 # Flash Sale
-    GIF1 = (By.XPATH, '//*[@id="flashSale"]')
+    GIF1 = (By.XPATH, '//*[@id="flashSale1"]')
     GIF2 = (By.XPATH, '//*[@id="flashSale2"]')
 
 

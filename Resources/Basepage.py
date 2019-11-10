@@ -14,8 +14,11 @@ class BasePage():
 		WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).click()
 
 	def assert_text(self, by_locator, element_text):
-		web_element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
-		assert (web_element.text == element_text), 'Incorrect Text is displayed'
+		try :
+			web_element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+			assert web_element.text == element_text
+		except AssertionError as asserterror:
+			print('Incorrect Text is displayed. ', asserterror)
 
 	def assert_placeholder_text(self, by_locator, element_text):
 		web_element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
@@ -34,8 +37,8 @@ class BasePage():
 		try:
 			element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
 			return bool(element)
-		except NoSuchElementException as timeout:
-			print('Unable to find the element')
+		except NoSuchElementException as elementexception:
+			print('The element is not found', elementexception)
 
 	def hover_to(self, by_locator):
 		element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
@@ -44,8 +47,7 @@ class BasePage():
 	def assert_image(self, by_locator, image_locator):
 		try:
 			element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
-			elemImage = element.get_attribute('alt')
 			assert (element.get_attribute('src') == image_locator)
-			print(elemImage)
-		except TimeoutException as timeout:
-			print("Unable to find image", timeout)
+			print(element)
+		except NoSuchElementException as elementexception:
+			print('The element is not found', elementexception)

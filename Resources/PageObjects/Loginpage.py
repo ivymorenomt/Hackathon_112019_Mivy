@@ -10,7 +10,6 @@ class HomePage(BasePage):
         self.driver.get(TestData.BASE_URL)
 
     def verify_labels_present(self):
-        self.driver.find_element(*Locators.LBLLOGIN)
         self.assert_text(Locators.LBLLOGIN, TestData.HEADERLABEL)
         self.assert_text(Locators.LBLUSERNAME, TestData.ULABEL)
         self.assert_text(Locators.LBLPASSWORD, TestData.PWDLABEL)

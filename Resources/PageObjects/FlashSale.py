@@ -15,7 +15,14 @@ class FlashSale(BasePage):
     def load_page(self) :
         try:
          imagetest = self.driver.find_element(By.XPATH, '//*[@id="flashSale"]')
-         findImage = imagetest.find_element(By.CSS_SELECTOR, '#flashSale > img')
-         self.is_visible(findImage)
+         findImage = imagetest.find_element(By.XPATH, '//*[@id="flashSale"]/img')
+         imagetest2 = self.driver.find_element(By.XPATH, '//*[@id="flashSale2"]')
+         findImage2 = imagetest2.find_element(By.XPATH, '//*[@id="flashSale2"]/img')
+         imgName = findImage.get_attribute('src')
+         imgName2 = findImage2.get_attribute('src')
+         assert imgName == TestData.SRCIMG1
+         assert imgName2 == TestData.SRCIMG2
+         print(imgName)
+         print(imgName2)
         except NoSuchElementException as elementexception:
             print('The element is not found', elementexception)

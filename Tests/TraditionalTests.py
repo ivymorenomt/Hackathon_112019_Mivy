@@ -3,7 +3,11 @@ from selenium import webdriver
 
 from Resources.PageObjects.Loginpage import HomePage
 from Resources.PageObjects.UserLogsIn import UserLogin
+from Resources.PageObjects.FinancialOverview import FinancialOverview
+from Resources.PageObjects.FlashSale import FlashSale
+from Resources.PageObjects.CanvasChart import CanvasChartPage
 from Data.Testdata import TestData
+from Resources.Pages import HomePage
 
 class Test_LoginPage_UI_Elements_Base(unittest.TestCase):
 
@@ -24,6 +28,7 @@ class Test_01_LoginPage_UI_Elements(Test_LoginPage_UI_Elements_Base):
 		self.homePage = HomePage(self.driver)
 		self.homePage.verify_labels_present()
 		self.homePage.verify_icons_present()
+
 
 class Test_02_Data_Driven(Test_LoginPage_UI_Elements_Base):
 	def setUp(self):
@@ -47,3 +52,34 @@ class Test_02_Data_Driven(Test_LoginPage_UI_Elements_Base):
 		self.login.login_remember_user()
 		self.driver.back()
 		self.login.verify_user_is_remembered()
+
+class Test_03_Financial_Overview(Test_LoginPage_UI_Elements_Base):
+	def setUp(self):
+		super().setUp()
+
+	def test_031_check(self):
+		self.homePage = HomePage(self.driver)
+		self.login = UserLogin(self.driver)
+		self.login.login_username_password()
+		self.financial = FinancialOverview(self.driver)
+		self.financial.sort_table_values_and_match_values()
+
+class Test_04_Chart(Test_LoginPage_UI_Elements_Base):
+	def setUp(self):
+		super().setUp()
+
+	def test_041_check(self):
+		self.homepage = HomePage(self.driver)
+		self.login = UserLogin(self.driver)
+		self.login.login_username_password()
+		self.chart = CanvasChartPage(self.driver)
+		self.chart.values_validate()
+
+class Test_05_FlashSale(Test_LoginPage_UI_Elements_Base):
+	def setUp(self):
+		super().setUp()
+
+	def test_051_validate(self):
+
+		self.sale = FlashSale(self.driver)
+		self.sale.load_page()

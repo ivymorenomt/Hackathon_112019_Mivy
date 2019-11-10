@@ -1,6 +1,8 @@
 class TestData() :
+
 	CHROME_EXECUTABLE_PATH = "/usr/local/bin/chromedriver"
 	BASE_URL = "https://demo.applitools.com/hackathon.html"
+	FLASH_SALE_URL = "https://demo.applitools.com/hackathonAppV2.html?showAd=true"
 
 # Login Form Data
 	HEADERLABEL = 'Login Form'
@@ -17,3 +19,8 @@ class TestData() :
 	CREDENTIALS_ALERT = "Both Username and Password must be present"
 
 # Home Page Data
+	SORTED_VALUES = ['- 320.00 USD', '- 244.00 USD', '+ 17.99 USD', '+ 340.00 USD', '+ 952.23 USD', '+ 1,250.00 USD']
+	UNSORTED_VALUES = ['+ 1,250.00 USD', '+ 952.23 USD', '- 320.00 USD', '+ 17.99 USD', '- 244.00 USD', '+ 340.00 USD']
+	SRCIMG1 = 'https://demo.applitools.com/img/flashSale.gif'
+	SRCIMG2 = 'https://demo.applitools.com/img/flashSale2.gif'
+

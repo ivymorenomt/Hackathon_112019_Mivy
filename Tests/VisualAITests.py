@@ -6,10 +6,13 @@ import os
 
 class HelloWorld:
 
-    eyes = Eyes()
+    try:
+        eyes = Eyes()
 
     # Initialize the eyes SDK and set your private API key.
-    eyes.api_key = os.environ["clWb3bSm9VcodIpKN99FQNSNIFYdSQ9IK5eHCd3k1ukM110"]
+        eyes.api_key = os.environ["clWb3bSm9VcodIpKN99FQNSNIFYdSQ9IK5eHCd3k1ukM110"]
+    except KeyError:
+        print('Key =error')
 
     try:
 
@@ -27,6 +30,7 @@ class HelloWorld:
 
         # End the test.
         eyes.close()
+
 
     finally:
 

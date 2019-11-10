@@ -9,6 +9,9 @@ verify_ssl = true
 selenium = "*"
 chromedriver = "*"
 logger = "*"
+self = "*"
+rows = "*"
+selenium-components = "*"
 
 [requires]
 python_version = "3.7"

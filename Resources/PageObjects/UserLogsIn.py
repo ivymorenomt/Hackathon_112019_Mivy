@@ -43,5 +43,6 @@ class UserLogin(BasePage):
 
     def verify_user_is_remembered(self):
         self.is_enabled(Locators.CHKREMEMBER)
+        # REMARK
         # Unable to extract text entered by user in the Username field.
         # Unable to verify if the text matches with the test data that user provided upon remembering username

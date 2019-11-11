@@ -8,7 +8,7 @@ from Resources.PageObjects.FlashSale import FlashSale
 from Resources.PageObjects.CanvasChart import CanvasChartPage
 from Data.Testdata import TestData
 
-class Test_LoginPage_UI_Elements_Base(unittest.TestCase):
+class Test_Base(unittest.TestCase):
 
 	def setUp(self):
 		chrome_options = webdriver.ChromeOptions()
@@ -19,17 +19,17 @@ class Test_LoginPage_UI_Elements_Base(unittest.TestCase):
 		self.driver.close()
 		self.driver.quit()
 
-class Test_01_LoginPage_UI_Elements(Test_LoginPage_UI_Elements_Base):
+class Test_01_LoginPage_UI_Elements(Test_Base):
 	def setUp(self):
 		super().setUp()
 
-	def test_001_login_page_elements(self):
+	def test_001_login_page_elements_check(self):
 		self.homePage = HomePage(self.driver)
 		self.homePage.verify_labels_present()
 		self.homePage.verify_icons_present()
 
 
-class Test_02_Data_Driven(Test_LoginPage_UI_Elements_Base):
+class Test_02_Data_Driven(Test_Base):
 	def setUp(self):
 		super().setUp()
 
@@ -52,7 +52,7 @@ class Test_02_Data_Driven(Test_LoginPage_UI_Elements_Base):
 		self.driver.back()
 		self.login.verify_user_is_remembered()
 
-class Test_03_Table_Sort(Test_LoginPage_UI_Elements_Base):
+class Test_03_Table_Sort(Test_Base):
 	def setUp(self):
 		super().setUp()
 
@@ -63,7 +63,7 @@ class Test_03_Table_Sort(Test_LoginPage_UI_Elements_Base):
 		self.financial = FinancialOverview(self.driver)
 		self.financial.sort_table_values_and_match_values()
 
-class Test_04_Canvas_Chart(Test_LoginPage_UI_Elements_Base):
+class Test_04_Canvas_Chart(Test_Base):
 	def setUp(self):
 		super().setUp()
 
@@ -74,7 +74,7 @@ class Test_04_Canvas_Chart(Test_LoginPage_UI_Elements_Base):
 		self.chart = CanvasChartPage(self.driver)
 		self.chart.values_validate()
 
-class Test_05_Dynamic_Content(Test_LoginPage_UI_Elements_Base):
+class Test_05_Dynamic_Content(Test_Base):
 	def setUp(self):
 		super().setUp()
 

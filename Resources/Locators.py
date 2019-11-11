@@ -1,7 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
 
 class Locators():
 
@@ -14,6 +11,7 @@ class Locators():
     ICNUSER = (By.XPATH, '//div[starts-with(@class, "pre-icon os-icon os-icon-user-male-circle")]')
     ICNPWD = (By.XPATH, '//div[starts-with(@class, "pre-icon os-icon os-icon-fingerprint")]')
     ALERT = (By.XPATH, '//*[starts-with(@id, "random")]')
+
 
     # locators for textboxes, button and checkboxes
     TXTUSERNAME = (By.ID, 'username')
@@ -37,4 +35,5 @@ class Locators():
 # Expense Chart
     LNKCOMPARE = (By.ID, 'showExpensesChart')
     BTNSHOWDATA = (By.ID, 'addDataset')
+
 

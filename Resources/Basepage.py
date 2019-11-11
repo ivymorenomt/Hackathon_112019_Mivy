@@ -1,7 +1,4 @@
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -39,10 +36,6 @@ class BasePage():
 			return bool(element)
 		except NoSuchElementException as elementexception:
 			print('The element is not found', elementexception)
-
-	def hover_to(self, by_locator):
-		element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
-		ActionChains(self.driver).move_to_element(element).perform()
 
 	def assert_image(self, by_locator, image_locator):
 		try:

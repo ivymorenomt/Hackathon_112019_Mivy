@@ -1,7 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
-from Resources.Locators import Locators
 from Data.Testdata import TestData
 from Resources.Basepage import BasePage
 
@@ -22,7 +21,5 @@ class FlashSale(BasePage):
          imgName2 = findImage2.get_attribute('src')
          assert imgName == TestData.SRCIMG1
          assert imgName2 == TestData.SRCIMG2
-         print(imgName)
-         print(imgName2)
         except NoSuchElementException as elementexception:
             print('The element is not found', elementexception)

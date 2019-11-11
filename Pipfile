@@ -12,6 +12,7 @@ logger = "*"
 self = "*"
 rows = "*"
 selenium-components = "*"
+unittest = "*"
 
 [requires]
 python_version = "3.7"

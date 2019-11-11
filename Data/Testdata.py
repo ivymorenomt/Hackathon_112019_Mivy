@@ -4,7 +4,7 @@ class TestData() :
 	BASE_URL = "https://demo.applitools.com/hackathonV2.html"
 	FLASH_SALE_URL = "https://demo.applitools.com/hackathonAppV2.html?showAd=true"
 	API_KEY = ''
-	VIEW_PORT = {'width': 1430, 'height': 700}
+	VIEW_PORT = {'width': 1024, 'height': 700}
 	APP_NAME = 'ACME DEMO TEST'
 
 # Login Form Data
